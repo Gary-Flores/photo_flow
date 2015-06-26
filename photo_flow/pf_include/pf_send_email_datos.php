@@ -23,10 +23,10 @@ $campos = mysql_num_fields($resultado);
 $filas = mysql_num_rows($resultado);
 
 if ($resultado) {
-//	echo "yes";
+	echo "yes";
 }else{
 
-//	echo "No";
+	echo "No";
 }
 if(isset($_POST['pf_enviar_datos_email_boton'])){
 $NOMBRE=isset($_POST['pf_nombre_email'])?$_POST['pf_nombre_email']:'Servidor';
