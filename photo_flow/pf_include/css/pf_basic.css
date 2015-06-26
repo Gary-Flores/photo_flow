@@ -1,0 +1,234 @@
+/* 
+    Created on  : 26-may-2015
+    Author      : LuzPuraMacII
+    Style       : Sheet
+*/
+.pf_logindiv {
+    position: relative;
+    top:  80px; 
+    width: 250px;
+    padding: 15px;
+    border: 2px solid gray;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #b0e0e6;
+}
+table.pf_logintable {
+    font-family: verdana,arial,sans-serif;
+    font-size:12px;
+    width: 225px;
+    border-collapse: collapse;
+}
+table.pf_logintable th {
+    padding: 5px;
+}
+table.pf_logintable tr {
+    background-color:#ffffff;
+}
+table.pf_logintable td {
+    padding: 5px;
+}
+table.pf_gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.pf_gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+}
+table.pf_gridtable tr {
+    background-color:#ffffff;
+}
+table.pf_gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+}
+.alert_messge {
+    font-family: verdana,arial,sans-serif;
+    font-size:13px;
+    text-align: center;
+    color: #cc0000;
+}
+.alert_messge_list {
+    font-family: verdana,arial,sans-serif;
+    font-size:12px;
+    text-align: left;
+    color: #cc0000;
+}
+.pf_button {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
+    background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
+    background-color:#ededed;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    color:#3a8a9e;
+    font-family:verdana,arial,sans-serif;
+    font-size:11px;
+    padding:7px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+}
+.pf_button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
+    background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+    background-color:#bab1ba;
+}
+.pf_button:active {
+    position:relative;
+    top:1px;
+}
+.pf_div_menu {
+    font-family: verdana,arial,sans-serif;
+    font-size:13px;
+    text-align: left;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #b0e0e6;
+    background-color:#b0e0e6;
+}
+.pf_div_menu:hover {
+    cursor: pointer;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #e1e2ed;
+    background-color:#e1e2ed;
+}
+.pf_message {
+    font-family: verdana,arial,sans-serif;
+    font-size:12px;
+    width: 600px;
+    background-color:#e1e2ed;
+}
+.pf_link {
+    font-family: verdana,arial,sans-serif;
+    font-size:12px;
+    cursor: pointer;
+}
+table.pf_work_tray {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    width: 600px;
+}
+table.pf_work_tray thead {
+    font-family: verdana,arial,sans-serif;
+    font-size:12px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.pf_work_tray th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+}
+table.pf_work_tray tr {
+    background-color:#ffffff;
+}
+table.pf_work_tray td {
+    padding: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666;
+}
+#clearance {
+    height: 41px;
+}
+div#templateInfo div ul.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    height: 41px;
+    line-height: 41px;
+}
+div#templateInfo div ul.navigation li {
+    float: left;
+    height: 41px;
+    line-height: 41px;
+    margin-left: 10px;
+    width: auto;
+}
+div#templateInfo div ul.navigation li a {
+    display: block;
+    text-decoration: none;
+    height: 41px;
+    line-height: 41px;
+    padding: 0 30px 0 10px;
+    font-family: Arial;
+    font-size: 12px;
+    color: #9a9a9a;
+    text-transform: uppercase;
+}
+div#templateInfo div ul.navigation li a:hover {
+    color: #325a76;
+}
+div#templateInfo div ul.navigation li.option a {
+    background-repeat: no-repeat;
+    height: 41px;
+}
+div#templateInfo div ul.navigation li.option a:hover {
+    background-repeat: no-repeat;
+}
+#contenedor-mains {
+    background:#000;
+    //width:450px;
+}
+.pf_column {
+    border-style: inset;
+    border-width: 0px;
+    background:#fff;
+    //width:120px;
+    margin:10px;
+    float:left;
+}
+.pf_mail{
+
+    background:#B0E0E6;
+    border-radius: 15px;
+    box-shadow: -webkit-box-shadow: 0px 0px 10px -2px black;
+    box-shadow-moz-box-shadow: 0px 0px 10px -2px black;
+    box-shadow: 0px 0px 10px -2px black;
+    padding: 1em;
+}
+.clear {
+    clear:both;
+}
+#hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
