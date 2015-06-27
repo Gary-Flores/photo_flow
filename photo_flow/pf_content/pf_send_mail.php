@@ -1,13 +1,23 @@
 <?php
 include '../pf_include/pf_main_head.php';
-include '../pf_include/pf_send_email_datos.php';
-
+$consult = array();
+if (isset($_SESSION['pf_email_info'])) {
+    $consult = $_SESSION['pf_email_info'];
+} else {
+    $id_flow = $_GET['id_flow'];
+    $id_phase = $_GET['id_phase'];
+    $id_instance = $_GET['id_instance'];
+    $consult = getInfoForMail($id_flow, $id_phase, $id_instance);
+    $_SESSION['pf_email_info'] = $consult;
+}
+$l_mail = $consult[0];
+$l_instance = $consult[1];
 ?>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-.equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="../pf_include/css/pf_basic.js"></script>
         <style type="text/css">
@@ -51,19 +61,71 @@ include '../pf_include/pf_send_email_datos.php';
                 </div>
             </div>
             <div class="pf_column">
-            <FORM class="pf_mail" method="post" action="pf_send_mail.php">
-                <h2 >Ingrese su nombre <br/></h2><input name="pf_nombre_email" value=<?php echo "$nombre_mail" ?> type="text" size="35">
-                <h2>Ingrese su email <br/></h2><input name="pf_email_email" value=<?php echo "$mail_mail" ?> type="text" size="35">
-                <h2>Ingrese el titulo de su mensaje <br/></h2>
-                <TEXTAREA NAME="pf_mensaje_email_TITLE" ROWS="3" COLS="40" ><?php echo "$titulo_mensaje_mail" ?></TEXTAREA>
+                <form method="post" name="form_send_email" action="pf_operation.php" target='_self' enctype="multipart/form-data">
+                    <table class="pf_work_tray">
+                        <head>
+                            <tr>
+                                <td colspan="2"><?php echo $array_label['tit_email_form']; ?></td>
+                            </tr>
+                        </head>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $array_label['lb_from']; ?></td>
+                                <td>
+                                    <input type="email" name="sm_email_from" size="50" value="<?php echo $l_mail['m_from']; ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $array_label['lb_email']; ?></td>
+                                <td>
+                                    <input type="email" name="sm_email_to" size="50" value="<?php echo $l_instance['e_mail']; ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $array_label['lb_subject']; ?></td>
+                                <td>
+                                    <input type="text" name="sm_subject" size="50" value="<?php echo $l_mail['m_subject']; ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $array_label['lb_message']; ?></td>
+                                <td>
+                                    <textarea cols="50" rows="10" name="sm_message"><?php echo $l_mail['message']; ?>
+                                    </textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $array_label['lb_attachments']; ?></td>
+                                <td>
 
-                <h2>Ingrese su mensaje </h2>
-                
-                <TEXTAREA NAME="pf_mensaje_email_CONTENT" ROWS="8" COLS="40"><?php echo "$mensaje_email" ?></TEXTAREA>
-                <br/><center><input type="Submit" name="pf_enviar_datos_email_boton" value="Enviar informacion" style="background-color:#4BAA06;padding:0.5em;margin:1em;border-radius:8px;font-size:24px;input:hover{background-color:#ffff;}">
-</center>
-                </FORM> 
+                                    <?php echo $l_mail['attachment']; ?>
+                                    <p>Adjuntar archivo: <input type='file' name='archivo1' id='archivo1'></p><p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    <div id="sm_message">
+                                        <?php
+                                        if (isset($_POST['msg_operation'])) {
+                                            echo "<p class='alert_messge'>".$_POST['msg_operation']."</p>";
+                                        }
+                                        ?>
+                                    </div>
+                                    <input type="hidden" name="type_operation" value="send_email">
 
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="button" value="<?php echo $array_label['button_send']; ?>"
+                                        class="pf_button" name='btn_send' onclick="document.form_send_email.submit();">
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
             </div>
         </div>
         <form action="pf_start_page.php" name="form_red_start" method="post">

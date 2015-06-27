@@ -63,7 +63,7 @@ include '../pf_include/pf_main_head.php';
                       "<tr onmouseover=\"this.style.backgroundColor='#dedede';\" onmouseout=\"this.style.backgroundColor='#ffffff';\" >"
                     . "<td>".$showtablerow['id_instance']."</td><td>".$showtablerow['e_date']."</td>"
                     . "<td>".$showtablerow['e_location']."</td><td>".$showtablerow['c_name']."</td><td>".$showtablerow['e_mail']."</td>"
-                    . "<td>".$showtablerow['phone']."</td><td><a href='pf_send_mail.php'><img src='http://www.smart-list.com/images/mega-ad/mail_imag.png' width=30 heigth=30></img></a></td><tr>\n";
+                    . "<td>".$showtablerow['phone']."</td><td><a href='pf_send_mail.php?id_flow=".$showtablerow['id_flow']."&id_phase=".$showtablerow['id_phase']."&id_instance=".$showtablerow['id_instance']."'><img src='../pf_include/img/i_email.png' width=25 heigth=25></img></a></td><tr>\n";
                 }
                 ?>
                     <tfoot>

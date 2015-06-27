@@ -24,16 +24,19 @@ $pf_ins_customer = "INSERT INTO pf_customer (id_instance, first_name, last_name,
 $pf_ins_event = "INSERT INTO pf_event (id_instance, e_date, e_location, e_reception, n_guests)
         VALUES(\"%s\", STR_TO_DATE(\"%s\", \"[FMT_DATE_HOUR]\"), \"%s\", \"%s\", %d)";
 // Detail Instance Work
-$pf_sel_phases_id =  "SELECT ins.id_flow, ins.id_instance, ins.t_create, DATE_FORMAT(eve.e_date,\"[FMT_DATE_EVENT]\") e_date, eve.e_location,
+$pf_sel_phases_id =  "SELECT ins.id_flow, ins.id_phase, ins.id_instance, ins.t_create, DATE_FORMAT(eve.e_date,\"[FMT_DATE_EVENT]\") e_date, eve.e_location,
         eve.e_reception, eve.n_guests, ltrim(concat(cus.first_name, \" \", cus.last_name)) c_name, cus.e_mail, cus.phone
     FROM pf_event eve, pf_customer cus, pf_instance ins
     WHERE ins.id_instance = eve.id_instance AND ins.id_instance = cus.id_instance AND ins.id_phase = %d
     ORDER BY cus.first_name, eve.e_location";
-$pf_sel_phases_id_user =  "SELECT ins.id_flow, ins.id_instance, ins.t_create, DATE_FORMAT(eve.e_date,\"[FMT_DATE_EVENT]\") e_date, eve.e_location,
+$pf_sel_phases_id_user =  "SELECT ins.id_flow, ins.id_phase, ins.id_instance, ins.t_create, DATE_FORMAT(eve.e_date,\"[FMT_DATE_EVENT]\") e_date, eve.e_location,
         eve.e_reception, eve.n_guests, ltrim(concat(cus.first_name, \" \", cus.last_name)) c_name, cus.e_mail, cus.phone
     FROM pf_event eve, pf_customer cus, pf_instance ins
     WHERE ins.id_instance = eve.id_instance AND ins.id_instance = cus.id_instance AND ins.id_phase = %d AND ins.id_user = %d
     ORDER BY cus.first_name, eve.e_location";
+$pf_sel_mail_phase =  "SELECT id_flow, id_phase, m_from, m_subject, message, format, attachment FROM pf_email_config WHERE id_flow = %d AND id_phase = %d";
+$pf_sel_ins_info =  "SELECT eve.id_instance, ltrim(concat(cus.first_name, ' ', cus.last_name)) name, cus.e_mail, cus.phone, cus.status, eve.e_date,
+    eve.e_location, eve.e_reception, eve.n_guests FROM pf_customer cus, pf_event eve WHERE cus.id_instance = eve.id_instance AND cus.id_instance = '%s'";
 //Catalogs
 $pf_sel_list_flow = "SELECT id_flow, name FROM pf_flow WHERE status = 1";
 // Ungrouped

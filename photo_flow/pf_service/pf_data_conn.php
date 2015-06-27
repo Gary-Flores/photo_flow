@@ -161,6 +161,22 @@ function getDetailInboxByIdUser($id_phase, $id_user) {
     return $query_result;
 }
 
+function getMailInfo($id_flow, $id_phase) {
+    global $pf_sel_mail_phase;
+    $l_query = sprintf($pf_sel_mail_phase,
+        mysql_real_escape_string($id_flow),
+        mysql_real_escape_string($id_phase));
+    $query_result = mysql_query($l_query);
+    return $query_result;
+}
+
+function getInstanceById($id_instance) {
+    global $pf_sel_ins_info;
+    $l_query = sprintf($pf_sel_ins_info, mysql_real_escape_string($id_instance));
+    $query_result = mysql_query($l_query);
+    return $query_result;
+}
+
 /**
  * Catalog function - Return list of flows
  * @global type $pf_sel_list_flow

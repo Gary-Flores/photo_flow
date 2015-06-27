@@ -1,7 +1,7 @@
 <?php
 include '../pf_service/pf_function_comm.php';
 include '../pf_service/pf_data_service.php';
-//
+//document.form_val_manual.submit()
 ?>
 <html>
     <body onload="document.form_val_manual.submit()">
@@ -51,6 +51,44 @@ include '../pf_service/pf_data_service.php';
             echo "<input type='hidden' name='om_e_location' value='".$values[5][0]."'>";
             echo "<input type='hidden' name='om_e_reception' value='".$values[6][0]."'>";
             echo "<input type='hidden' name='om_n_guests' value='".$values[7][0]."'>";
+            echo "<input type='hidden' name='msg_operation' value='".$message_om."'>";
+            echo "</form>";
+        break;
+        case "send_email":
+            // Catch values
+        $valor_subject=$_POST['sm_subject'];
+        $valor_message=$_POST['sm_message'];
+        $values = array(
+                array($_POST['sm_email_from'], 'email', $array_label['lb_from'],30),
+                array($_POST['sm_email_to'], 'email', $array_label['lb_email'], 30),);
+        $l_error = validateParamsForm($values);
+        if (count($l_error) > 0) {
+                $message_om = $array_label['msg_error_man_ope'].": <ul class=\"alert_messge_list\">";
+                for ($x = 0; $x < count($l_error); $x++) {
+                    $message_om = $message_om ."<li>".$l_error[$x]."</li>";
+                }
+                $message_om = $message_om."</ul>";
+            } else {
+                //$message_subject=$_POST('sm_subject');
+                //$message_message=$_post('sm_message');
+               // $message_om=sendMail($values[0][0],$values[1][0],$valor_subject,$valor_message);
+                if (form_mail($values[1][0],$valor_subject,"Los datos introducidos en el formulario son:\n\n",$values[0][0]))
+                $message_om = "Su mensaje ha sido enviado con exito";
+            else
+                $message_om = "Su mensaje no ha sido enviado con exito";
+
+                
+            }
+            echo "<form action='pf_send_mail.php' name='form_val_manual' method='post'>";
+            echo "<input type='hidden' name='type_operation' value='val_manual_operation'>";
+            echo "<input type='hidden' name='om_type_event' value='".$values[0][0]."'>";
+            echo "<input type='hidden' name='om_name' value='".$values[1][0]."'>";
+            // Validate Params
+            // Send email
+            // Change Instance Phase
+
+            echo "<form action='pf_send_mail.php' name='form_val_manual' method='post'>";
+            echo "<input type='hidden' name='msg_operation' value='".$message_om.count($l_error)."'>";
             echo "<input type='hidden' name='msg_operation' value='".$message_om."'>";
             echo "</form>";
         break;
