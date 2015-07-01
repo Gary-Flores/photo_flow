@@ -133,18 +133,21 @@ $msg_enviado= "Mensaje no enviado satisfactoriamente";
 
     return "".$msg_enviado;
 }*/
+function tal(){
+
+    header('Content-type: application/pdf');
+    readfile('luz.pdf');
+}
 function form_mail($sPara, $sAsunto, $sTexto, $sDe)
 {
 $bHayFicheros = 0;
 $sCabeceraTexto = "";
 $sAdjuntos = "";
-
 if ($sDe)$sCabeceras = "From:".$sDe."\n";
 else $sCabeceras = "";
 $sCabeceras .= "MIME-version: 1.0\n";
 foreach ($_POST as $sNombre => $sValor)
 $sTexto = $sTexto."<br/>".$sValor;
-
 foreach ($_FILES as $vAdjunto)
 {
 if ($bHayFicheros == 0)
@@ -152,28 +155,28 @@ if ($bHayFicheros == 0)
 $bHayFicheros = 1;
 $sCabeceras .= "Content-type: multipart/mixed;";
 $sCabeceras .= "boundary=\"--_Separador-de-mensajes_--\"\n";
-
 $sCabeceraTexto = "----_Separador-de-mensajes_--\n";
 $sCabeceraTexto .= "Content-type: text/html;charset=utf-8\n";
 $sCabeceraTexto .= "Content-transfer-encoding: 7BIT\n";
-
 $sTexto = $sCabeceraTexto.$sTexto;
 }
-if ($vAdjunto["size"] > 0)
+if ($vAdjunto["size"] > 0 & $vAdjunto["size"] <5000000)
 {
 $sAdjuntos .= "\n\n----_Separador-de-mensajes_--\n";
 $sAdjuntos .= "Content-type: ".$vAdjunto["type"].";name=\"".$vAdjunto["name"]."\"\n";;
 $sAdjuntos .= "Content-Transfer-Encoding: BASE64\n";
 $sAdjuntos .= "Content-disposition: attachment;filename=\"".$vAdjunto["name"]."\"\n\n";
-
 $oFichero = fopen($vAdjunto["tmp_name"], 'r');
 $sContenido = fread($oFichero, filesize($vAdjunto["tmp_name"]));
 $sAdjuntos .= chunk_split(base64_encode($sContenido));
 fclose($oFichero);
+}else{
+    return 0;
 }
 }
-
 if ($bHayFicheros)
 $sTexto .= $sAdjuntos."\n\n----_Separador-de-mensajes_----\n";
+$bHayFicheros = 0;
+
 return(mail($sPara, $sAsunto, $sTexto, $sCabeceras));
 }

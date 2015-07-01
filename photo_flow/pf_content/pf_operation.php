@@ -56,13 +56,59 @@ include '../pf_service/pf_data_service.php';
         break;
         case "send_email":
             // Catch values
-        $valor_subject=$_POST['sm_subject'];
-        $valor_message=$_POST['sm_message'];
+            $valor_subject=$_POST['sm_subject'];
+            $valor_message=$_POST['sm_message'];           
+            $nombre = $_FILES['sm_file']['name']; 
+       // $tipo = $_FILES['sm_file']['type']; 
+        //$tamano = $_FILES['sm_file']['size']; 
+        //$tmp = $_FILES['sm_file']['tmp_name'];
+        if($nombre!=""){
         $values = array(
+                array($_POST['sm_email_from'], 'email', $array_label['lb_from'],60),
+                array($_POST['sm_email_to'], 'email', $array_label['lb_email'], 60),
+                array($_POST['sm_subject'], 'text', $array_label['lb_subject'], 100),
+                array($_POST['sm_message'], 'text', $array_label['lb_message'], 4000),
+                array($_POST['sm_attachment'], 'text', $array_label['lb_email'], 200),
+                array($_FILES['sm_file']['error'], 's_file', $array_label['lb_attachments'], 80)
+                //array($_FILES['sm_file']['type'], 'file-type-mail', $array_label['lb_attachments'], 30)
+
+                );}
+        else{
+                $values = array(array($_POST['sm_email_from'], 'email', $array_label['lb_from'],60),
+                array($_POST['sm_email_to'], 'email', $array_label['lb_email'], 60),
+                array($_POST['sm_subject'], 'text', $array_label['lb_subject'], 100),
+                array($_POST['sm_message'], 'text', $array_label['lb_message'], 4000),
+                array($_POST['sm_attachment'], 'text', $array_label['lb_email'], 200));
+            
+        }
+        /*
+        }else{
+            $values = array(
                 array($_POST['sm_email_from'], 'email', $array_label['lb_from'],30),
-                array($_POST['sm_email_to'], 'email', $array_label['lb_email'], 30),);
+                array($_POST['sm_email_to'], 'email', $array_label['lb_email'], 30));
+        
+        }*/
         $l_error = validateParamsForm($values);
         if (count($l_error) > 0) {
+                $message_sm = $array_label['msg_error_man_ope'].": <ul class=\"alert_messge_list\">";
+                for ($x = 0; $x < count($l_error); $x++) {
+                    $message_sm = $message_sm ."<li>".$l_error[$x]."</li>";
+                }
+                $message_sm = $message_sm."</ul>";
+            } else 
+            {
+                if (form_mail($values[1][0],$valor_subject,"Los datos introducidos en el formulario son:\n\n",$values[0][0]))
+                   {       
+
+                       $message_sm = "Su mensaje ha sido enviado con exito";
+                    }
+                else
+                    $message_sm = "Su mensaje no ha sido enviado con exito, verifique el tamano de los attachments no supere 5 Megas";
+                
+            }
+        /*
+        $l_error_mail=$tamano;
+        if (count($l_error) > 0 ) {
                 $message_om = $array_label['msg_error_man_ope'].": <ul class=\"alert_messge_list\">";
                 for ($x = 0; $x < count($l_error); $x++) {
                     $message_om = $message_om ."<li>".$l_error[$x]."</li>";
@@ -76,20 +122,20 @@ include '../pf_service/pf_data_service.php';
                 $message_om = "Su mensaje ha sido enviado con exito";
             else
                 $message_om = "Su mensaje no ha sido enviado con exito";
+                $message_om .="<h1> Size: ".$tamano."<br/> Nombre: ".$nombre."<br/> Tipo: ".$tipo."<br/>Tmp: ".$tmp."</h1>";
 
                 
             }
+            */
             echo "<form action='pf_send_mail.php' name='form_val_manual' method='post'>";
-            echo "<input type='hidden' name='type_operation' value='val_manual_operation'>";
-            echo "<input type='hidden' name='om_type_event' value='".$values[0][0]."'>";
-            echo "<input type='hidden' name='om_name' value='".$values[1][0]."'>";
-            // Validate Params
-            // Send email
-            // Change Instance Phase
-
-            echo "<form action='pf_send_mail.php' name='form_val_manual' method='post'>";
-            echo "<input type='hidden' name='msg_operation' value='".$message_om.count($l_error)."'>";
-            echo "<input type='hidden' name='msg_operation' value='".$message_om."'>";
+            echo "<input type='hidden' name='type_operation' value='send_email'>";
+            echo "<input type='hidden' name='sm_email_from' value='".$values[0][0]."'>";
+            echo "<input type='hidden' name='sm_email_to' value='".$values[1][0]."'>";
+            echo "<input type='hidden' name='sm_subject' value='".$values[2][0]."'>";
+            echo "<input type='hidden' name='sm_message' value='".$values[3][0]."'>";
+            echo "<input type='hidden' name='sm_attachment' value='".$values[4][0]."'>";
+            echo "<input type='hidden' name='sm_file' value='".$values[5][0]."'>";
+            echo "<input type='hidden' name='msg_operation' value='".$message_sm."'>";
             echo "</form>";
         break;
     }  

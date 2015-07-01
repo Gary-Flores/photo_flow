@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/47918" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/s1.js" defer="defer"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/a.js" type="text/javascript"></script><script data-sifi-parsed="true" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/dpx.js" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/bk-static.js" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/a_002.js" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/cc.js" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/dataxpandelectronics_tag.js" async="" type="text/javascript"></script>
+<meta charset="utf-8"><meta name="robots" content="index, follow"><title>Código de PHP - Subir uno o varios archivos al servidor y mover-los a una carpeta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="title" content="Código de PHP - Subir uno o varios archivos al servidor y mover-los a una carpeta"><meta name="description" content="simple código que muestra como subir uno o varios archivos, y guardarlos en una carpeta de nuestro servidor."><meta name="keywords" content="php,subir,uno,varios,archivos,servidor,mover-los,carpeta,codigo,fuente"><meta property="og:image" content="http://www.lawebdelprogramador.com/img/logoCircle.jpg"><link href="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/css.css" type="text/css" rel="stylesheet"><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/gw.js" type="text/javascript"></script><script async="" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/cbgapi.loaded_2"></script><script async="" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/cbgapi.loaded_1"></script><script gapi_processed="true" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/plusone.js" async="" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/tag" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/tag.js" async=""></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/beacon.js" async=""></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/ga.js" async="" type="text/javascript"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/widgets.js" id="twitter-wjs"></script><script async="" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/cbgapi.loaded_0"></script><script type="text/javascript" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/js.js"></script><script async="" type="text/javascript" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/js_a.js"></script><script gapi_processed="true" type="text/javascript" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/plusone.js"></script>
+
+<link rel="alternate" href="http://www.lawebdelprogramador.com/feed/codigo.xml" type="application/rss+xml" title="LWP - Código fuente">
+</head>
+
+<body data-twttr-rendered="true" alink="#494965" link="#494965" vlink="#494965"><header>
+<div class="wrapper_full greyHeader">
+	<div class="wrapper">
+        
+<div class="publi header_logo"><script async="" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/adsbygoogle.js"></script>
+			<!-- 728x90, creado 19/05/08 -->
+			<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5586981122800176" data-ad-slot="4370038693"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script></div>
+	</div>
+</div>
+<div class="wrapper_full blueLight">
+	<div class="wrapper">
+		<div id="logo">
+			<div>
+				<div><a href="http://www.lawebdelprogramador.com/"></a></div>
+				<div>Comunidad de Programadores</div>
+			</div>
+		</div>
+		<div class="header_menu2">
+			<div id="login">
+				<form class="borderRadius_bottom" action="/programadores/validate.php" method="POST" onsubmit="return validateForm_programmersLogin()" id="loginForm">
+										<div>
+						<span>Iniciar sesión</span>
+						<span class="img"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="Cerrar" title="Cerrar"></span>
+					</div>
+					<div>
+						<div>
+							<div>
+								Correo: <input id="loginMail" name="m" type="text">
+							</div>
+							<div>
+								Contraseña: <input id="loginPas" name="p" type="password">
+							</div>
+						</div>
+						<div>
+							<div class="button" id="loginBtn">
+								<div>Entrar</div> <div class="img arrowRight left"></div>
+								<input type="submit">
+							</div>
+						</div>
+						<div>
+							<input name="rememberU" checked="checked" type="checkbox"><span>Recordar sesión en este navegador</span>
+						</div>
+						<div>
+							<a href="http://www.lawebdelprogramador.com/programadores/recordar.php" class="fontRegular">
+								Recordar contraseña?
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="headerLogin">
+				<span class="btnLogin"><span>Iniciar sesión</span><span class="img"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="Iniciar sesión" title="Iniciar sesión"></span></span><a href="http://www.lawebdelprogramador.com/programadores/agregar.php"><span><span>Crear cuenta</span><span class="img"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="Crear cuenta" title="Crear cuenta"></span></span></a>			</div>
+			<div id="menuSmarth"><span></span></div>
+			<nav>
+				<div>
+					<ul>
+						<li><span>Documentación y Recursos</span>
+							<ul>
+								<li><a href="http://www.lawebdelprogramador.com/cursos/">Cursos y Manuales</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/temas/">Biblioteca de Temas</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/codigo/">Código Fuente</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/noticias/">Noticias/Artículos</a></li>
+							</ul>
+						</li>
+						<li><span>Foros y Consultas</span>
+							<ul>
+								<li><a href="http://www.lawebdelprogramador.com/foros/">Foros de Consulta</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/preguntas/">Preguntas/Respuestas</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/tablon/">Tablón de Notas</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/diccionario/">Diccionario informático</a></li>
+							</ul>
+						</li>
+						<li><span>Programadores</span>
+							<ul>
+								<li><a href="http://www.lawebdelprogramador.com/programadores/">Programadores</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/trabajo/">Ofertas de Trabajo</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/sp/">Solicitudes para prog.</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/lista.php">Lista de Correo</a></li>
+							</ul>
+						</li>
+						<li><span>Programas</span>
+							<ul>
+								<li><a href="http://www.lawebdelprogramador.com/programas/">Programas/Utilidades</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/nprogramas/">Nuestros Programas</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/icocur.php">Iconos y Cursores</a></li>
+							</ul>
+						</li>
+						<li><span>Otros</span>
+							<ul>
+								<li><a href="http://www.lawebdelprogramador.com/colaboradores.php">Colaboradores</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/encuestas.php">Encuestas/Estadísticas</a></li>
+								<li><a href="http://www.lawebdelprogramador.com/contactar.php">Contactar</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+    </div>
+</div>
+
+<div class="breadcrumb wrapper">
+	<span><a href="http://www.lawebdelprogramador.com/index.php">LWP</a> » <a href="http://www.lawebdelprogramador.com/codigo/index.php">Código Fuente</a> » <a href="http://www.lawebdelprogramador.com/codigo/PHP/index1.html">PHP</a> » Código de PHP - Subir uno o varios archivos al servidor y mover-los a una carpeta</span>
+</div>
+
+<div class="wrapper white">
+	<div class="left">
+<div class="left"><script type="text/javascript"><!--
+            google_ad_client = 'ca-pub-5586981122800176';
+            /* 728x15, creado 5/05/11 */
+            google_ad_slot = '7805370279';
+            google_ad_width = 728;
+            google_ad_height = 15;
+            //-->
+            </script>
+            <script type="text/javascript" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/show_ads.js">
+            </script></div>
+</div>
+	<div class="header_date">
+			</div>
+</div>
+</header>
+
+<div class="wrapper">
+	<section>
+				<div class="headerH1"></div>
+		<h1>Código de PHP - Subir uno o varios archivos al servidor y mover-los a una carpeta</h1>
+		<div class="lineH1"></div>
+
+		<div class="headerList"><div class="headerList_search"><form action="/codigo/buscar.php" method="get"><input name="opc" value="1" type="hidden"><input name="id" value="71" type="hidden"><input name="charSearch" size="20" class="formulario" type="text"><span class="headerList_searchButton"><input value="Buscar" class="button" type="submit"></span></form></div><div class="headerList_buttonRight"><a href="http://www.lawebdelprogramador.com/codigo/PHP/index8.html" class="btnOption">Volver</a></div><div class="headerList_buttonRight"><a href="http://www.lawebdelprogramador.com/programadores/codigoAddUpd.php" class="btnOption">Agregar Código Fuente</a></div></div><div class="page"><div class="pageTopRight"><a href="http://www.lawebdelprogramador.com/codigo/PHP/2583-Obtener-el-primer-y-ultimo-dia-de-una-semana-dada.html">&lt;&lt;</a><a href="http://www.lawebdelprogramador.com/codigo/PHP/2577-Albums-de-fotos.html">&gt;&gt;</a></div></div><div class="rowCode newBlock"><div class="listRow2 listRowCode newBlock"><div></div><div class="newBlock"><h2><a href="http://www.lawebdelprogramador.com/codigo/PHP/2580-Subir-uno-o-varios-archivos-al-servidor-y-mover-los-a-una-carpeta.html">Subir uno o varios archivos al servidor y mover-los a una carpeta</a><a href="http://www.lawebdelprogramador.com/codigo/info.php?id=2580" class="img ico_graph h2"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="gráfica de visualizaciones" title="gráfica de visualizaciones"></a></h2><br><a href="http://www.lawebdelprogramador.com/codigo/PHP/index1.html"><h3>PHP</h3></a><div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_whiteStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="total">(6)</span></div></div><div>Publicado el 10 de Enero del 2014 por <a href="http://www.lawebdelprogramador.com/codigo/usuario.php?id=36045">Xavi</a></div><div>7.092 visualizaciones desde el 10 de Enero del 2014. Una media de 98 por semana</div></div><div class="newBlock ce" id="d">simple código que muestra como subir uno o varios archivos, y guardarlos en una carpeta de nuestro servidor.</div></div><a name="v2563"></a><div class="blockInfo selected" id="v2563"><a href="http://www.lawebdelprogramador.com/codigo/PHP/2580-Subir-uno-o-varios-archivos-al-servidor-y-mover-los-a-una-carpeta.html#v2563"><h4 class="borderRadius_top">Versión 1<div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_whiteStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="total">(6)</span></div></div></h4></a><div class="borderRadius_bottom"><div><div>Publicado el 10 de Enero del 2014<a href="http://www.lawebdelprogramador.com/codigo/info.php?id=v2563" class="img ico_graph h2"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="gráfica de visualizaciones de la versión: Versión 1" title="gráfica de visualizaciones de la versión: Versión 1"></a></div><div><div>7.093 visualizaciones desde el 10 de Enero del 2014. Una media de 98 por semana</div></div></div><div class="right"><div class="stars"><div><div><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div><div><span style="width:66%"></span></div></div><div><div><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div><div><span style="width:0%"></span></div></div><div><div><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div><div><span style="width:16%"></span></div></div><div><div><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div><div><span style="width:16%"></span></div></div><div><div><span class="img ico_greyStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div><div><span style="width:0%"></span></div></div></div></div><div class="newBlock"><br><div><div class="newCodeFormat"><div><div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div><div>32</div><div>33</div><div>34</div><div>35</div><div>36</div><div>37</div><div>38</div><div>39</div><div>40</div><div>41</div><div>42</div><div>43</div><div>44</div><div>45</div><div>46</div><div>47</div><div>48</div><div>49</div><div>50</div><div>51</div><div>52</div><div>53</div><div>54</div></div><div><pre>&lt;!DOCTYPE html&gt;</pre><pre>&lt;head&gt;</pre><pre>    &lt;meta charset="utf-8"&gt;</pre><pre>    &lt;title&gt;Subir una o varias imagenes al servidor&lt;/title&gt;</pre><pre>&lt;/head&gt;</pre><pre>&nbsp;</pre><pre>&lt;body&gt;</pre><pre>    &lt;?php</pre><pre>    # definimos la carpeta destino</pre><pre>    $carpetaDestino="imagenes/";</pre><pre>&nbsp;</pre><pre>    # si hay algun archivo que subir</pre><pre>    if($_FILES["archivo"]["name"][0])</pre><pre>    {</pre><pre>&nbsp;</pre><pre>        # recorremos todos los arhivos que se han subido</pre><pre>        for($i=0;$i&lt;count($_FILES["archivo"]["name"]);$i++)</pre><pre>        {</pre><pre>&nbsp;</pre><pre>            # si es un formato de imagen</pre><pre>            if($_FILES["archivo"]["type"][$i]=="image/jpeg" || $_FILES["archivo"]["type"][$i]=="image/pjpeg" || $_FILES["archivo"]["type"][$i]=="image/gif" || $_FILES["archivo"]["type"][$i]=="image/png")</pre><pre>            {</pre><pre>&nbsp;</pre><pre>                # si exsite la carpeta o se ha creado</pre><pre>                if(file_exists($carpetaDestino) || @mkdir($carpetaDestino))</pre><pre>                {</pre><pre>                    $origen=$_FILES["archivo"]["tmp_name"][$i];</pre><pre>                    $destino=$carpetaDestino.$_FILES["archivo"]["name"][$i];</pre><pre>&nbsp;</pre><pre>                    # movemos el archivo</pre><pre>                    if(@move_uploaded_file($origen, $destino))</pre><pre>                    {</pre><pre>                        echo "&lt;br&gt;".$_FILES["archivo"]["name"][$i]." movido correctamente";</pre><pre>                    }else{</pre><pre>                        echo "&lt;br&gt;No se ha podido mover el archivo: ".$_FILES["archivo"]["name"][$i];</pre><pre>                    }</pre><pre>                }else{</pre><pre>                    echo "&lt;br&gt;No se ha podido crear la carpeta: up/".$user;</pre><pre>                }</pre><pre>            }else{</pre><pre>                echo "&lt;br&gt;".$_FILES["archivo"]["name"][$i]." - NO es imagen jpg";</pre><pre>            }</pre><pre>        }</pre><pre>    }else{</pre><pre>        echo "&lt;br&gt;No se ha subido ninguna imagen";</pre><pre>    }</pre><pre>    ?&gt;</pre><pre>&nbsp;</pre><pre>    &lt;form action="&lt;?php echo $_SERVER["PHP_SELF"]?&gt;" method="post" enctype="multipart/form-data" name="inscripcion"&gt;</pre><pre>        &lt;input type="file" name="archivo[]" multiple="multiple"&gt;</pre><pre>        &lt;input type="submit" value="Enviar"  class="trig"&gt;</pre><pre>    &lt;/form&gt;</pre><pre>&lt;/body&gt;</pre><pre>&lt;/html&gt;</pre></div></div></div></div></div><br><br><br><a name="comentarios"></a><div class="commentList"><h3>Comentarios sobre la versión: Versión 1 (6)</h3><div class="comment"><div class="comment_header"><span class="comment_date">01/12/2014</span><span class="comment_name">we</span><div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_whiteStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_whiteStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div></div></div><div class="comment_content"><div class="comment_description">No ha dejado ningún comentario</div></div></div><div class="comment"><div class="comment_header"><span class="comment_date">06/01/2015</span><span class="comment_name">josempq</span><div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_whiteStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_whiteStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_whiteStar"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div></div></div><div class="comment_content"><div class="comment_description">gracias, lo voy a probar</div></div></div><div class="comment"><div class="comment_header"><span class="comment_date">03/02/2015</span><span class="comment_name">hector</span><div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div></div></div><div class="comment_content"><div class="comment_description">hola a todos este código es bastante simple liviano y funciona perfectamente felicitaciones al autor del mismo</div></div></div><div class="comment"><div class="comment_header"><span class="comment_date">18/03/2015</span><span class="comment_name">Jose</span><div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div></div></div><div class="comment_content"><div class="comment_description">esta buenisimo y muy sencillo felicidades!!!</div></div></div><div class="comment"><div class="comment_header"><span class="comment_date">06/05/2015</span><span class="comment_name">genial</span><div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div></div></div><div class="comment_content"><div class="comment_description">Gracias por el aporte. @ivanolete</div></div></div><div class="comment"><div class="comment_header"><span class="comment_date">08/06/2015</span><span class="comment_name">mmmm</span><div class="right"><div class="stars"><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span><span class="img ico_star"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="estrella"></span></div></div></div><div class="comment_content"><div class="comment_description">Malo, no sirve.</div></div></div></div><div class="commentForm"><h3>Comentar la versión: Versión 1</h3>		<a name="comentar"></a>
+		<table class="form" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td align="center">
+										<form action="/codigo/enlace.php" method="POST" name="formComment" onsubmit="return validateForm_comment(1,0,1)">
+						<input name="opc" value="1" type="hidden">
+						<input name="id" value="2580" type="hidden">
+						<input name="v" value="2563" type="hidden">
+						<input name="lang" value="PHP" type="hidden">
+						<table border="0" cellpadding="0" cellspacing="5">
+							<tbody><tr>
+								<td colspan="2"><div id="enombre" class="errorForm"></div></td>
+							</tr>
+							<tr>
+								<td align="right"><b>Nombre</b></td>
+								<td><input name="nombre" id="nombre" size="30" maxlength="80" class="formulario" type="text"></td>
+							</tr>
+							<tr>
+								<td colspan="2"><div id="ecorreo" class="errorForm"></div></td>
+							</tr>
+							<tr>
+								<td align="right"><b>Correo (no se visualiza en la web)</b></td>
+								<td><input name="correo" id="correo" size="30" maxlength="200" class="formulario" type="text"></td>
+							</tr>
+							<tr>
+								<td colspan="2"><div id="evaloracion" class="errorForm"></div></td>
+							</tr>
+							<tr><td align="right"><b>Valoración</b></td><td><ul id="starsSel"><li></li><li></li><li></li><li></li><li></li></ul><span id="starsInfo"></span></td><input name="stars" value="0" type="hidden"></tr>							<tr>
+								<td colspan="2"><div id="ecomentario" class="errorForm"></div></td>
+							</tr>
+						</tbody></table>
+						Comentarios<br><textarea name="comentario" rows="6" cols="80" class="formulario"></textarea>
+						<p><input value="Enviar Datos" id="idSend" class="button" type="submit"></p>
+					</form>
+				</td>
+			</tr>
+		</tbody></table>
+		</div></div></div><div class="socialNetwork16 right"><span>http://lwp-l.com/s2580</span><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flwp-l.com%2Fs2580&amp;t=Subir+uno+o+varios+archivos+al+servidor+y+mover-los+a+una+carpeta" target="_blank">
+			<span class="img facebook"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" title="Compartir en Facebook" alt="facebook"></span>
+		</a><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 24px; height: 15px;"><iframe title="+1" data-gapiattached="true" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/fastbutton.htm" name="I0_1435361527888" id="I0_1435361527888" vspace="0" tabindex="0" style="position: static; top: 0px; width: 24px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" width="100%" frameborder="0"></iframe></div>&nbsp;<a href="http://twitter.com/intent/tweet?status=%23C%C3%B3digo+de+%23PHP+-+Subir+uno+o+varios+archivos+al+servidor+y+mover-los+a+una+carpeta%20http://lwp-l.com/s2580" title="Compartir a Twitter" target="blank"><span class="img twitter"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" title="Compartir en Twitter" alt="twitter"></span></a></div></div><div class="publi_otherSections"><a href="http://www.lawebdelprogramador.com/foros/PHP/index1.html"><div class="img info_white left"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" title="información" alt="información"></div>Consulta tus dudas en el foro de PHP</a></div>
+<div id="paginacion"><div class="row"><div class="prev" onclick="window.location='/codigo/PHP/2583-Obtener-el-primer-y-ultimo-dia-de-una-semana-dada.html'"><div><div></div><div>Obtener el primer y ultimo día de una semana dada</div></div></div><div></div><div class="next" onclick="window.location='/codigo/PHP/2577-Albums-de-fotos.html'"><div><div>Albums de fotos</div><div></div></div></div></div></div>
+
+<div class="publi_belowForms"><script async="" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/adsbygoogle.js"></script>
+            <!-- 336x280, creado 13/06/10 -->
+            <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5586981122800176" data-ad-slot="2253215058"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script></div>
+	</section>
+
+	<aside>
+		
+<div class="content_right publi_robapaginas"><script type="text/javascript"><!--
+            google_ad_client = "ca-pub-5586981122800176";
+            /* 300x250, creado 25/03/11 */
+            google_ad_slot = "3947471861";
+            google_ad_width = 300;
+            google_ad_height = 250;
+            //-->
+            </script>
+            <script type="text/javascript" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/show_ads.js">
+            </script></div>
+			 <div class="menu content_right">
+				 <ul>
+					<li>Enviar a un amigo</li>
+				</ul>
+				<div>
+					<form class="recommendForm2" onsubmit="return false;">
+						<input name="id" value="2580" type="hidden">						<input placeholder="Tu nombre *" name="name" type="text">
+						<input placeholder="eMail de tu amigo *" name="mail" type="text">
+						<p class="errorForm f_black"></p>
+						<p class="newBlock"><input class="button" id="sendRecommend" value="Recomendar" type="submit"></p>
+					</form>
+				</div>
+			 </div>
+			 				<div class="menu content_right">
+					<ul>
+						<li>Otras secciones relacionadas con PHP</li>
+						<li><a href="http://www.lawebdelprogramador.com/cursos/PHP/index1.html">Cursos</a></li><li><a href="http://www.lawebdelprogramador.com/temas/PHP/index1.html">Biblioteca de Temas</a></li><li><a href="http://www.lawebdelprogramador.com/foros/PHP/index1.html">Foros</a></li><li><a href="http://www.lawebdelprogramador.com/preguntas/listacontestadas.php?id=71&amp;texto=PHP">Preguntas</a></li>					</ul>
+				</div>
+				<div class="menu content_right"><ul><li>General</li><li class="menu_link"><a href="http://www.lawebdelprogramador.com/feed/codigo.xml"><span class="img rss"><img src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/img.png" alt="Código RSS"></span> Código RSS</a></li><li><a href="http://www.lawebdelprogramador.com/codigo/masvisitados.php?id=71">Los + visitados</a></li><li><a href="http://www.lawebdelprogramador.com/codigo/masvotados.php?id=71">Los + votados</a></li><li><a href="http://www.lawebdelprogramador.com/codigo/promedio.php?id=71">Promedio</a></li><li><a href="http://www.lawebdelprogramador.com/codigo/historial.php?id=71">Historial</a></li><li><a href="http://www.lawebdelprogramador.com/recomendar.php?a=14">Recomendar</a></li></ul></div>	</aside>
+</div>
+
+<div id="layer">
+	<div id="layerc"></div>
+	<div id="layerClock"></div>
+</div>
+
+	<footer>
+		<div class="wrapper">
+			<div>
+									<iframe src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/likebox.htm" scrolling="no" style="border:none; overflow:hidden; width:300px; height:258px;" allowtransparency="true" frameborder="0"></iframe>
+								</div>
+			<div>
+				<div><div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 106px;"><iframe title="+Badge" data-gapiattached="true" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/badge.htm" name="I1_1435361527978" id="I1_1435361527978" vspace="0" tabindex="0" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 106px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" width="100%" frameborder="0"></iframe></div><br></div><div><iframe style="position: static; visibility: visible; width: 206px; height: 20px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/follow_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>				<div class="menu-sitemap newBlock">
+					<ul>
+						<li class="title">Información y Recursos</li>
+						<li><a href="http://www.lawebdelprogramador.com/cursos/" rel="nofollow">Cursos y Manuales</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/temas/" rel="nofollow">Biblioteca de Temas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/codigo/" rel="nofollow">Código Fuente</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/noticias/" rel="nofollow">Noticias/Artículos</a></li>
+					</ul>
+					<ul>
+						<li class="title">Foros y Consultas</li>
+						<li><a href="http://www.lawebdelprogramador.com/foros/" rel="nofollow">Foros de Consulta</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/preguntas/" rel="nofollow">Preguntas/Respuestas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/tablon/" rel="nofollow">Tablón de Notas</a></li>
+                        <li><a href="http://www.lawebdelprogramador.com/diccionario/" rel="nofollow">Diccionario</a></li>
+					</ul>
+					<ul>
+						<li class="title">Programadores</li>
+						<li><a href="http://www.lawebdelprogramador.com/programadores/" rel="nofollow">Programadores</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/trabajo/" rel="nofollow">Ofertas de Trabajo</a></li>
+                        <li><a href="http://www.lawebdelprogramador.com/sp/" rel="nofollow">Solicitudes</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/lista.php" rel="nofollow">Lista de Correo</a></li>
+					</ul>
+					<ul>
+						<li class="title">Programas</li>
+						<li><a href="http://www.lawebdelprogramador.com/programas/" rel="nofollow">Programas/Utilidades</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/nprogramas/" rel="nofollow">Nuestros Programas</a></li>
+                        <li><a href="http://www.lawebdelprogramador.com/icocur.php" rel="nofollow">Iconos y Cursores</a></li>
+					</ul>
+					<ul>
+						<li class="title">Otros</li>
+						<li><a href="http://www.lawebdelprogramador.com/colaboradores.php" rel="nofollow">Colaboradores</a></li>
+                        <li><a href="http://www.lawebdelprogramador.com/encuestas.php" rel="nofollow">Encuestas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/contactar.php" rel="nofollow">Contactar</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">Copyright © 2000-2015 Interactive Programmers Community - Todos los derechos reservados</div>
+	</footer>
+	<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2166074-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "13280783" });
+(function() {
+var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=13280783&cv=2.0&cj=1" />
+</noscript>
+<script type="text/javascript">
+(function(){
+var tagjs=document.createElement("script");
+var s=document.getElementsByTagName("script")[0];
+tagjs.async=true;
+tagjs.src="//dataxpand.script.ag/tag.js#site=63UCMvc";
+s.parentNode.insertBefore(tagjs,s);
+}());
+</script><script language="javascript" type="text/javascript">(function(){var bsrv="http://c.billypub.com/c/194555411eb36489f?"+((new Date()).getTime() %2147483648) + Math.random(); document.write("<scr"+"ipt language='javascript' type='text/javascript' src='"+bsrv+"'></scr"+"ipt>");})();</script><script language="javascript" type="text/javascript" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/194555411eb36489f"></script>
+<script type="text/javascript">
+window.___gcfg = {lang: 'es'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/postmessageRelay.htm" id="oauth2relay507145071" name="oauth2relay507145071"></iframe>
+      <iframe name="__bkframe" id="__bkframe" src="javascript:void(0)" width="0" frameborder="0" height="0"></iframe>
+      
+      <img class="mphfntywqrcwfmuyvfhd" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/set.txt" width="1" height="1">
+ 
+<img class="mphfntywqrcwfmuyvfhd" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/a.gif" style="display:none !important">
+<img class="mphfntywqrcwfmuyvfhd" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/pixel.gif" width="1" height="1">
+<img class="mphfntywqrcwfmuyvfhd" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/3PDPHandler.gif">
+
+<iframe style="display:none;" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/net.htm" width="0" frameborder="0" height="0"></iframe>
+<iframe style="display:none;" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/net_002.htm" width="0" frameborder="0" height="0"></iframe>
+<script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/p"></script><script src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/search.js" type="text/javascript"></script><iframe style="border: 0px none; width: 0px; height: 0px; display: block;" src="C%C3%B3digo%20de%20PHP%20-%20Subir%20uno%20o%20varios%20archivos%20al%20servidor%20y%20mover-los%20a%20una%20carpeta%20Archivos/rtifr.htm" id="LOTCCFrameFri Jun 26 2015 18:33:00 GMT-0500"></iframe><div style="right: 101px;" id="goTop" title="Subir"></div></body></html>

@@ -2,7 +2,13 @@
 include '../pf_include/pf_main_head.php';
 $consult = array();
 if (isset($_SESSION['pf_email_info'])) {
-    $consult = $_SESSION['pf_email_info'];
+    if (isset($_POST['type_operation']) && $_POST['type_operation'] == "send_email") {
+        $consult[0] = array('m_from' => $_POST['sm_email_from'],'m_subject' => $_POST['sm_subject'],
+            'message' => $_POST['sm_message'], 'sm_file' => $_POST['sm_file'], 'attachment' => $_POST['sm_attachment']);
+        $consult[1] = array('e_mail' => $_POST['sm_email_to']);
+    } else {
+        $consult = $_SESSION['pf_email_info'];
+    }
 } else {
     $id_flow = $_GET['id_flow'];
     $id_phase = $_GET['id_phase'];
@@ -24,6 +30,13 @@ $l_instance = $consult[1];
             @import "../pf_include/css/pf_basic.css";
         </style>
         <script type="text/javascript">
+        
+function abrir(param) {
+    param = "recibe1.php?pf_file=" + param;
+    alert(param);
+    open(param,'top=500,left=500,width=800,height=500') ;
+//getURL("luz.pdf","_blank");
+}
         function redirect(param) {
             document.getElementById('type_operation').value = param;
             document.form_red_start.submit();
@@ -32,6 +45,7 @@ $l_instance = $consult[1];
         <title><?php echo $array_label['start_pg_title']; ?></title>
     </head>
     <body onload="showDiv('<?php echo isset($show_div_load)?$show_div_load:''; ?>');">
+
         <div id="templateInfo">
             <div>
                 <ul class="navigation">
@@ -61,7 +75,7 @@ $l_instance = $consult[1];
                 </div>
             </div>
             <div class="pf_column">
-                <form method="post" name="form_send_email" action="pf_operation.php" target='_self' enctype="multipart/form-data">
+                <form method="post" name="form_send_email" action="pf_operation.php" target='_self' enctype="multipart/form-data" >
                     <table class="pf_work_tray">
                         <head>
                             <tr>
@@ -95,11 +109,108 @@ $l_instance = $consult[1];
                                 </td>
                             </tr>
                             <tr>
-                                <td><?php echo $array_label['lb_attachments']; ?></td>
                                 <td>
+                                    <?php echo $array_label['lb_attachments']; ?>
+                                </td>
+                                <td>
+                                <form action='recibe1.php' method="GET">
+                                    <?php 
+                                    $att=explode(";", $l_mail['attachment']);
+                                    for ($i=0; $i <sizeof($att) ; $i++) { 
+                                    $ext=explode(".",$att[$i]);
+                                    $pf_file_show;
+                                    $pf_file_type;
+                                    switch ($ext[1]) {
+                                        case 'pdf':
+                                            $pf_file_show='pdf.png';
+                                            $pf_file_type='aplication/pdf';
+                                            break;
+                                        case 'zip':
+                                            $pf_file_show='zip.jpg';
+                                           $pf_file_type='application/zip';
+                                            break;
+                                        case 'rar':
+                                        $pf_file_show='rar.jpg';
+                                        $pf_file_type='application/octet-stream';
+                                        break;
+                                        case 'ppt':
+                                            $pf_file_show='ppt.png';
+                                            $pf_file_type='application/vnd.ms-powerpoint';
+                                            break;
+                                        case 'pptx':
+                                            $pf_file_type='application/vnd.openxmlformats-officedocument.presentationml.presentation';
+                                            $pf_file_show='pptx.png';
+                                            break;
+                                        case 'doc':
+                                        $pf_file_show='doc.jpg';
+                                        $pf_file_type='application/msword';
+                                        break;
+                                        case 'docx':
+                                        $pf_file_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+                                            $pf_file_show='docx.jpg';
+                                            break;
+                                        case 'docm':
+                                        $pf_file_type='application/vnd.ms-word.document.macroenabled.12';
+                                            $pf_file_show='docm.png';
+                                            break;
+                                        case 'xls':
+                                        $pf_file_type='application/vnd.ms-excel';
+                                        $pf_file_show='xls.jpg';
+                                        break;
+                                        case 'xlsx':
+                                        $pf_file_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+                                            $pf_file_show='xlsx.jpg';
+                                            break;
+                                        case 'xlsm':
+                                        $pf_file_type='application/vnd.ms-excel.sheet.macroenabled.12';
+                                            $pf_file_show='xlsm.png';
+                                            break;
+                                        case 'txt':
+                                        $pf_file_type='text/plain';
+                                        $pf_file_show='txt.jpg';
+                                        break;
+                                        case 'csv':
+                                        $pf_file_type='application/vnd.ms-excel';
+                                            $pf_file_show='csv.png';
+                                            break;
+                                        case 'html':
+                                        $pf_file_type='text/html';
+                                            $pf_file_show='html.jpg';
+                                            break;
+                                        default:
+                                        $pf_file_type='';
+                                            $pf_file_show='file.png';
+                                            break;
+                                    }
+                                        
+                                        echo "<div style=\"padding:1.2em; display:inline;\"><img src=\"../pf_include/img/".$pf_file_show."\" width=30px heigth=30px style=\"margin-bottom:-1em;\";/><a href=\"#\" onclick=\"abrir('".trim($att[$i])."&pf_type=".$pf_file_type."');\">$ext[0]</a></div>&nbsp;&nbsp;";
+                                    
+                                    }
+                                         
 
-                                    <?php echo $l_mail['attachment']; ?>
-                                    <p>Adjuntar archivo: <input type='file' name='archivo1' id='archivo1'></p><p>
+                                        
+                                       
+                                    ?>
+                                    </form>
+                                    <input type="hidden" name="sm_attachment" value="<?php echo $l_mail['attachment']; ?>">
+                                    <p>
+                                        <?php
+                                           // echo "F".$l_mail['sm_file'];
+                                            //if (isset($l_mail['sm_file']) && $l_mail['sm_file'] != "") {
+                                               
+                                     //           echo "<input type='file' accept='.csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain,image/*,text/html,.pdf' value=".$l_mail['sm_file'].">";
+                                            //} else {
+                                    echo "<br/>";
+
+                                                echo "<intput type='hidden' name='MAX_FILE_SIZE' value='5000000'>";
+                                                echo "<input type='file' accept='.csv,application/vnd.ms-excel,
+                                                application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                                                text/plain,image/*,text/html,.pdf,application/zip,application/msword,
+                                                .ppt,.pptx,.xls,.xlsx,doc,.docx,.zip,.rar,.docm,.xls,.xlsm' name='sm_file'>";
+                                            //}
+                                        ?>
+                                       
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
@@ -112,7 +223,6 @@ $l_instance = $consult[1];
                                         ?>
                                     </div>
                                     <input type="hidden" name="type_operation" value="send_email">
-
                                 </td>
                             </tr>
                         </tbody>
@@ -131,5 +241,6 @@ $l_instance = $consult[1];
         <form action="pf_start_page.php" name="form_red_start" method="post">
             <input type="hidden" id="type_operation" name="type_operation" value="">
         </form>
+        
     </body>
 </html>
