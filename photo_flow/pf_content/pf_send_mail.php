@@ -33,7 +33,7 @@ $l_instance = $consult[1];
         
 function abrir(param) {
     param = "recibe1.php?pf_file=" + param;
-    open(param,'top=500,left=500,width=800,height=500') ;
+    open(param,'','top=500,left=500,width=800,height=500') ;
 //getURL("luz.pdf","_blank");
 }
         function redirect(param) {
