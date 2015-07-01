@@ -33,7 +33,6 @@ $l_instance = $consult[1];
         
 function abrir(param) {
     param = "recibe1.php?pf_file=" + param;
-    alert(param);
     open(param,'top=500,left=500,width=800,height=500') ;
 //getURL("luz.pdf","_blank");
 }
@@ -120,10 +119,14 @@ function abrir(param) {
                                     $ext=explode(".",$att[$i]);
                                     $pf_file_show;
                                     $pf_file_type;
+                                    if($ext[1]=='jpg' || $ext[1]=='jpeg' || $ext[1]=='jpe'|| $ext[1]=='gif'|| $ext[1]=='png'|| $ext[1]=='bmp'|| $ext[1]=='ico'|| $ext[1]=='svg'|| $ext[1]=='svgz'|| $ext[1]=='tiff'|| $ext[1]=='ai'|| $ext[1]=='drw'|| $ext[1]=='pct'|| $ext[1]=='psp'|| $ext[1]=='xcf' || $ext[1]=='psd' || $ext[1]=='raw'){
+                                        $pf_file_show='image.png';
+                                        $pf_file_type='image/'.$ext[1]."&img=1";
+                                    }else{
                                     switch ($ext[1]) {
                                         case 'pdf':
                                             $pf_file_show='pdf.png';
-                                            $pf_file_type='aplication/pdf';
+                                            $pf_file_type='application/pdf';
                                             break;
                                         case 'zip':
                                             $pf_file_show='zip.jpg';
@@ -182,7 +185,7 @@ function abrir(param) {
                                             $pf_file_show='file.png';
                                             break;
                                     }
-                                        
+                                        }
                                         echo "<div style=\"padding:1.2em; display:inline;\"><img src=\"../pf_include/img/".$pf_file_show."\" width=30px heigth=30px style=\"margin-bottom:-1em;\";/><a href=\"#\" onclick=\"abrir('".trim($att[$i])."&pf_type=".$pf_file_type."');\">$ext[0]</a></div>&nbsp;&nbsp;";
                                     
                                     }
